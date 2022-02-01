@@ -5,6 +5,6 @@ async function createAuction(event, context) {
   };
 }
 
-export const handler = hello;
+export const handler = createAuction;
 
 
