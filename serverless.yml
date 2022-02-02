@@ -28,7 +28,7 @@ functions:
           path: /auction
 
   getActions:
-    handler: src/handlers/getActions.handler
+    handler: src/handlers/getAuctions.handler
     events:
       - http:
           method: GET
