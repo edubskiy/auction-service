@@ -12,7 +12,7 @@ async function placeBid(event, context) {
     TableName: process.env.AUCTIONS_TABLE_NAME,
     Key: { id },
     UpdateExpression: 'set highestBid.amount = :amount',
-    ExpressionAttibuteValues: {
+    ExpressionAttributeValues: {
       ':amount': amount,
     },
     ReturnValues: 'ALL_NEW',
