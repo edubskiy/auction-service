@@ -11,7 +11,7 @@ async function getActions(event, context) {
   let auctions;
 
   try {
-    const result = await dynamodb.scan({ TableName: process.env.AUCTIONS_TABLE_NAME })
+    const result = await dynamodb.scan({ TableName: process.env.AUCTIONS_TABLE_NAME }).promise();
 
     auctions = result.Items;
 
