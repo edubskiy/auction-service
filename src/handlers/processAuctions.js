@@ -6,7 +6,7 @@ async function processAuctions(event, context) {
   try {
     const auctionsToClose = await getEndedAuctions();
     const closeAuctionsPromises = auctionsToClose.map((auction) =>
-      closeAuction(auction.id),
+      closeAuction(auction),
     );
     await Promise.all(closeAuctionsPromises);
 
