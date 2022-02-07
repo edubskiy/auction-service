@@ -1,16 +1,12 @@
 const schema = {
   type: 'object',
   properties: {
-    queryStringParameters: {
+    body: {
       type: 'object',
       properties: {
-        status: {
+        title: {
           type: 'string',
-          enum: ['OPEN', 'CLOSED'],
-          default: 'OPEN',
-          message: {
-            pattern: '',
-          },
+          required: true,
         },
       },
     },
