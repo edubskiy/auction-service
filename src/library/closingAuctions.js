@@ -1,6 +1,6 @@
 import AWS from 'aws-sdk';
 
-const dynamodb = new AWS.DynamoDB.DocumentClient;
+const dynamodb = new AWS.DynamoDB.DocumentClient();
 
 export async function closeAuction(auction) {
   const params = {
@@ -8,14 +8,14 @@ export async function closeAuction(auction) {
     Key: { id: auction.id },
     UpdateExpression: 'set #status = :status',
     ExpressionAttributeValues: {
-      ':status': 'CLOSED'
+      ':status': 'CLOSED',
     },
     ExpressionAttributeNames: {
-      '#status': 'status'
-    }
-  }
+      '#status': 'status',
+    },
+  };
 
-  const result = await dynamodb.query(params).promise();
+  const result = await dynamodb.update(params).promise();
 
   return result;
 }
