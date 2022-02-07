@@ -6,9 +6,9 @@ const schema = {
       properties: {
         title: {
           type: 'string',
-          required: true,
         },
       },
+      required: ['title'],
     },
   },
   required: ['body'],
