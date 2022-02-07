@@ -17,5 +17,5 @@ export async function closeAuction(auction) {
 
   const result = await dynamodb.query(params).promise();
 
-  return result.Items;
+  return result;
 }
