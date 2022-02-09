@@ -8,6 +8,9 @@ const schema = {
           type: 'string',
           enum: ['OPEN', 'CLOSED'],
           default: 'OPEN',
+          message: {
+            pattern: '',
+          },
         },
       },
     },
