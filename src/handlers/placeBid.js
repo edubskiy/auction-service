@@ -20,7 +20,7 @@ async function placeBid(event, context) {
 
   if (amount < auction.highestBid.amount) {
     throw new createError.Forbidden(
-      'You can not bid with less amount than you bid before',
+      `You can not bid with less amount than current highest bid ${auction.highestBid.amount}`,
     );
   }
 
