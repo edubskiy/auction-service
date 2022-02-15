@@ -39,7 +39,7 @@ export async function closeAuction(auction) {
     })
   }).promise();
 
-  return Promise.all([
+  return await Promise.all([
     notifySeller,
     notifyBidder
   ]);
