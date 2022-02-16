@@ -30,6 +30,8 @@ export async function closeAuction(auction) {
         body: `Oh no! Your item "${title} didn't get any bids. Better luck next time!"`
       })
     }).promise();
+    
+    return;
   }
 
   const notifySeller = sqs.sendMessage({
